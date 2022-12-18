@@ -9,12 +9,18 @@
 //info storage
   //calculator either needs to store the first number somewhere OR clears the display and executes entire line after pressing equals
 let arr = [];
+let total = 0;
 
 function numButtons() {
   for (let i = 0; i <= 9; i++) {
     let buttons = document.getElementById('numButtons');
     let btn = document.createElement('button');
     btn.innerHTML = i;
+    btn.setAttribute('id', i);
+    let value = document.querySelector('id');
+    btn.addEventListener('click', () => {
+      arr.push(this.value); //returns undefined
+    })
     buttons.appendChild(btn);
   };
 }
@@ -22,10 +28,11 @@ function numButtons() {
 numButtons();
 
 let calcDisplay = () => {
-  let total = 0;
-  
-
+  let display = document.getElementById('number');
+  display.innerHTML = total;
 }
+
+calcDisplay();
 
 //input
     //adds number to array/field
