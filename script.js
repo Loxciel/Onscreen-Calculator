@@ -11,10 +11,11 @@
 let arr = [];
 
 function numButtons() {
-  for (let i = 0; i < 9; i++) {
+  for (let i = 0; i <= 9; i++) {
     let buttons = document.getElementById('numButtons');
     let btn = document.createElement('button');
-    btn.innerHTML = '`${[i]}`'
+    btn.innerHTML = i;
+    buttons.appendChild(btn);
   };
 }
 
