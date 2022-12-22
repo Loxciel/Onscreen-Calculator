@@ -19,7 +19,8 @@ function numButtons() {
     btn.setAttribute('id', i);
     let value = document.querySelector('id');
     btn.addEventListener('click', () => {
-      arr.push(this.value); //returns undefined
+      arr.push(i); 
+      console.log(arr);
     })
     buttons.appendChild(btn);
   };
