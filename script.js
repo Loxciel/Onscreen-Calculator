@@ -17,10 +17,10 @@ function numButtons() {
     let btn = document.createElement('button');
     btn.innerHTML = i;
     btn.setAttribute('id', i);
-    let value = document.querySelector('id');
     btn.addEventListener('click', () => {
       arr.push(i); 
       console.log(arr);
+      calcDisplay();
     })
     buttons.appendChild(btn);
   };
@@ -30,7 +30,7 @@ numButtons();
 
 let calcDisplay = () => {
   let display = document.getElementById('number');
-  display.innerHTML = total;
+  display.innerHTML = arr.join('');
 }
 
 calcDisplay();
