@@ -67,6 +67,7 @@
   const addMe = () => {
     if(arr3[0]) {
       operate();
+      arr3.push(`+`);
     } else {
     arr2.push(parseInt(arr.join('')));
     calcDisplay();
@@ -78,6 +79,7 @@
   const subMe = () => {
     if(arr3[0]) {
       operate();
+      arr3.push('-');
     } else {
   arr2.push(parseInt(arr.join('')));
     calcDisplay();
@@ -89,6 +91,7 @@
   const multMe = () => {
      if(arr3[0]) {
       operate();
+      arr3.push('*');
     } else {
     arr2.push(parseInt(arr.join('')));
     calcDisplay();
@@ -101,6 +104,7 @@
   const divMe = () => {
      if(arr3[0]) {
       operate();
+      arr3.push('/');
     } else {
     arr2.push(parseInt(arr.join('')));
     calcDisplay();
