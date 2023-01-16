@@ -124,6 +124,14 @@
     arr.pop();
     calcDisplay();
     }
+
+  const addDecimal = () => {
+    if(arr.includes('.')) {
+       return;
+        }
+    arr.push('.')
+    calcDisplay();
+    }
   //operate function to execute calculator functions
   
   const operate = () => {
