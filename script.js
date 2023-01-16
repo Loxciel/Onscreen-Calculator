@@ -162,6 +162,13 @@
     if(arr3[0] === '/') {
       let num2 = parseInt(arr.join(''));
       let num1 = arr2[0];
+      if(num2 === 0 || num1 === 0) {
+        arr = [];
+        arr2 = [];
+        arr.push("Can't let you do that! No Dividing by 0!");
+        calcDisplay();
+        arr = [];
+      } else{
       total = num1 / num2;
       arr = [];
       arr.push(total);
@@ -170,6 +177,7 @@
       arr2.push(total);
       arr = [];
       arr3 = [];
+      }
     }
   }
   
