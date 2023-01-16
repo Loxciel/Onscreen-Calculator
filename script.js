@@ -12,6 +12,7 @@
 
   let arr = [];
   let arr2 = [];
+  let arr3 = [];
   let total = 0;
   
   function numButtons() {
@@ -22,7 +23,6 @@
       btn.setAttribute('id', i);
       btn.addEventListener('click', () => {
         arr.push(i); 
-        console.log(arr);
         calcDisplay();
       })
       buttons.appendChild(btn);
@@ -41,44 +41,14 @@
   //input
       //adds number to array/field
     //actually display arr 1 + arr 2 but only input into arr2 when a function button is pressed
-  
+      //functions take in 2 parameters -> arr1 and arr2
+        //num1, num2; num1 is parseInt(arr1.join('')) and num2 is the same for arr2;
+        //function executes labeled function 
+        //have 3rd arr to display everything? maybe
   const addNum = (num) => {
   arr.push(num);
   let newNum = arr.join('');
   display.innerHTML = newNum;
-  }
-  
-  const addMe = () => {
-    arr.push('+');
-    arr2.push(arr);
-    calcDisplay();
-  }
-  
-  const subMe = () => {
-    arr.push('-');
-    arr2.push(arr);
-    calcDisplay();
-  }
-  
-  const multMe = () => {
-    arr.push('*');
-    arr2.push(arr);
-    calcDisplay();
-  }
-  
-  const divMe = () => {
-    arr.push ('/');
-    arr2.push(arr);
-    calcDisplay();
-  }
-  
-  const clearArr = () => {
-    arr = [];
-    calcDisplay();
-  }
-  
-  const equals = () => {
-    
   }
   
   //2nd array contains first number in operation
@@ -94,30 +64,108 @@
   
   //operations
   
-  const calcAdd = (num1, num2) => {
-    total = num1 + num2;
-    totalDiv.innerHTML = total;
+  const addMe = () => {
+    if(arr3[0]) {
+      operate();
+    } else {
+    arr2.push(parseInt(arr.join('')));
+    calcDisplay();
+    arr3.push(`+`);
+    arr = [];
+    }
   }
   
-  const calcSub = (num1, num2) => {
-    total = num1 - num2;
-    totalDiv.innerHTML = total;
+  const subMe = () => {
+    if(arr3[0]) {
+      operate();
+    } else {
+  arr2.push(parseInt(arr.join('')));
+    calcDisplay();
+    arr3.push('-');
+    arr = [];
+    }
   }
   
-  const calcMult = (num1, num2) => {
-    total = num1 * num2;
-    totalDiv.innerHTML = total;
+  const multMe = () => {
+     if(arr3[0]) {
+      operate();
+    } else {
+    arr2.push(parseInt(arr.join('')));
+    calcDisplay();
+    arr3.push('*');
+    arr = [];
+    }
   }
   
-  const calcDiv = (num1, num2) => {
-    total = num1 / num2; 
-    totalDiv.innerHTML = total;
+  
+  const divMe = () => {
+     if(arr3[0]) {
+      operate();
+    } else {
+    arr2.push(parseInt(arr.join('')));
+    calcDisplay();
+    arr3.push('/');
+    arr = [];
+    }
   }
   
+  const clearArr = () => {
+    arr = [];
+    arr2 = [];
+    arr3 = [];
+    calcDisplay();
+  }
   //operate function to execute calculator functions
   
   const operate = () => {
-  
-  
+    if(arr3[0] === '+') {
+      let num1 = parseInt(arr.join(''));
+      let num2 = arr2[0];
+      total = num1 + num2;
+      arr = [];
+      arr.push(total);
+      calcDisplay();
+      arr2 = [];
+      arr2.push(total);
+      arr = [];
+      arr3 = [];
+    }
+    if(arr3[0] === '-') {
+      let num2 = parseInt(arr.join(''));
+      let num1 = arr2[0];
+      total = num1 - num2;
+      arr = [];
+      arr.push(total);
+      calcDisplay();
+      arr2.push(total);
+      arr2 = [];
+      arr2.push(total);
+      arr = [];
+      arr3 = [];
+    }
+  if(arr3[0] === '*') {
+      let num2 = parseInt(arr.join(''));
+      let num1 = arr2[0];
+      total = num1 * num2;
+      arr = [];
+      arr.push(total);
+      calcDisplay();
+      arr2 = [];
+      arr2.push(total);
+      arr = [];
+      arr3 = [];
+    }
+    if(arr3[0] === '/') {
+      let num2 = parseInt(arr.join(''));
+      let num1 = arr2[0];
+      total = num1 / num2;
+      arr = [];
+      arr.push(total);
+      calcDisplay();
+      arr2 = [];
+      arr2.push(total);
+      arr = [];
+      arr3 = [];
+    }
   }
   
