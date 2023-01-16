@@ -63,7 +63,9 @@
   const button = document.createElement('button');
   
   //operations
-  
+    //if statement checks for held operation and executes it before adding current operator and proceeding as normal    
+
+
   const addMe = () => {
     if(arr3[0]) {
       operate();
@@ -169,7 +171,8 @@
         calcDisplay();
         arr = [];
       } else{
-      total = num1 / num2;
+      opp = num1 / num2;
+      total = opp.toFixed(2);
       arr = [];
       arr.push(total);
       calcDisplay();
