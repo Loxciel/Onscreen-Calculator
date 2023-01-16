@@ -65,7 +65,6 @@
   //operations
     //if statement checks for held operation and executes it before adding current operator and proceeding as normal    
 
-
   const addMe = () => {
     if(arr3[0]) {
       operate();
@@ -102,7 +101,6 @@
     }
   }
   
-  
   const divMe = () => {
      if(arr3[0]) {
       operate();
@@ -121,6 +119,11 @@
     arr3 = [];
     calcDisplay();
   }
+
+  const backSpace = () => {
+    arr.pop();
+    calcDisplay();
+    }
   //operate function to execute calculator functions
   
   const operate = () => {
